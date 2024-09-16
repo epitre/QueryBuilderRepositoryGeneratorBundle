@@ -40,10 +40,10 @@ class RepositoryGeneratorTest extends KernelTestCase
 
         $container = self::getContainer();
 
-        $this->assertTrue($container->has('tbn_qbrg.generator.repository_generator'));
+        $this->assertTrue($container->has('okwind_qbrg.generator.repository_generator'));
 
         /** @var RepositoryGenerator */
-        $service = $container->get('tbn_qbrg.generator.repository_generator');
+        $service = $container->get('okwind_qbrg.generator.repository_generator');
         $service->generateFiles();
 
         $content = \file_get_contents(__DIR__.'/../Repository/MyClassRepositoryBase.php');

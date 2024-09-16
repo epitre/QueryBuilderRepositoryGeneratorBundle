@@ -15,7 +15,7 @@ class QueryBuilderRepositoryGeneratorExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         //the bundles to load
-        $container->setParameter('tbn_qbrg.generator.bundles', $config['bundles']);
+        $container->setParameter('okwind_qbrg.generator.bundles', $config['bundles']);
 
         $entityConfiguration = [];
         foreach ($config['mapping'] as $entityConfig) {
@@ -35,14 +35,14 @@ class QueryBuilderRepositoryGeneratorExtension extends Extension
             }
         }
 
-        $container->setParameter('tbn_qbrg.generator.template.entity_configuration', $entityConfiguration);
-        $container->setParameter('tbn_qbrg.generator.template.repository_extension', $repositoryExtensions);
+        $container->setParameter('okwind_qbrg.generator.template.entity_configuration', $entityConfiguration);
+        $container->setParameter('okwind_qbrg.generator.template.repository_extension', $repositoryExtensions);
 
         //the templates
-        $container->setParameter('tbn_qbrg.generator.template.top_repository', $config['templates']['top_repository']);
-        $container->setParameter('tbn_qbrg.generator.template.column', $config['templates']['column']);
-        $container->setParameter('tbn_qbrg.generator.template.association', $config['templates']['association']);
-        $container->setParameter('tbn_qbrg.generator.template.bottom_repository', $config['templates']['bottom_repository']);
+        $container->setParameter('okwind_qbrg.generator.template.top_repository', $config['templates']['top_repository']);
+        $container->setParameter('okwind_qbrg.generator.template.column', $config['templates']['column']);
+        $container->setParameter('okwind_qbrg.generator.template.association', $config['templates']['association']);
+        $container->setParameter('okwind_qbrg.generator.template.bottom_repository', $config['templates']['bottom_repository']);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');

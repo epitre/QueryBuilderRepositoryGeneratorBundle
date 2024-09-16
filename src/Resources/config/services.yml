@@ -1,30 +1,30 @@
 services:
-    tbn_qbrg.generator.repository_generator:
+    okwind_qbrg.generator.repository_generator:
         class: Okwind\QueryBuilderRepositoryGeneratorBundle\Generator\RepositoryGenerator
         arguments:
             - "@Okwind\\QueryBuilderRepositoryGeneratorBundle\\Generator\\TemplateService"
-            - "%tbn_qbrg.generator.bundles%"
+            - "%okwind_qbrg.generator.bundles%"
             - "@maker.doctrine_helper"
-            - "@tbn_qbrg.configuration.configurator"
+            - "@okwind_qbrg.configuration.configurator"
             - "@Okwind\\QueryBuilderRepositoryGeneratorBundle\\Generator\\Persister"
             - "@logger"
-    tbn_qbrg.configuration.configurator:
+    okwind_qbrg.configuration.configurator:
         class: Okwind\QueryBuilderRepositoryGeneratorBundle\Configuration\Configurator
         arguments:
-            - "%tbn_qbrg.generator.template.entity_configuration%"
-            - "%tbn_qbrg.generator.template.repository_extension%"
+            - "%okwind_qbrg.generator.template.entity_configuration%"
+            - "%okwind_qbrg.generator.template.repository_extension%"
     Okwind\QueryBuilderRepositoryGeneratorBundle\Generator\Persister:
         class: Okwind\QueryBuilderRepositoryGeneratorBundle\Generator\Persister
     Okwind\QueryBuilderRepositoryGeneratorBundle\Generator\TemplateService:
         class: Okwind\QueryBuilderRepositoryGeneratorBundle\Generator\TemplateService
         arguments:
-            - "%tbn_qbrg.generator.template.top_repository%"
-            - "%tbn_qbrg.generator.template.column%"
-            - "%tbn_qbrg.generator.template.bottom_repository%"
-            - "%tbn_qbrg.generator.template.association%"
+            - "%okwind_qbrg.generator.template.top_repository%"
+            - "%okwind_qbrg.generator.template.column%"
+            - "%okwind_qbrg.generator.template.bottom_repository%"
+            - "%okwind_qbrg.generator.template.association%"
             - "@twig"
-    tbn_qbrg.command.generate_command:
+    okwind_qbrg.command.generate_command:
         class: Okwind\QueryBuilderRepositoryGeneratorBundle\Command\GenerateCommand
         arguments:
-            - "@tbn_qbrg.generator.repository_generator"
+            - "@okwind_qbrg.generator.repository_generator"
         tags: ['console.command']
