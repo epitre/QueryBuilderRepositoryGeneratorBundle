@@ -33,7 +33,7 @@ class TemplateService
     }
 
     public function renderAssociation(
-        AssociationMapping $associationMapping,
+        array $associationMapping,
         string $entityDql,
         ClassMetadata $targetEntityMetadata,
         string $entityDqlTargeted,
