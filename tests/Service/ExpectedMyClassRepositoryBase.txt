@@ -547,13 +547,4 @@ class MyClassRepositoryBase extends \Doctrine\Bundle\DoctrineBundle\Repository\S
 
         return static::getQueryBuilderSingleResult($qb);
     }
-
-    public function existsByForeignClasses(
-        mixed $value,
-    ): bool {
-        $qb = $this->getNewQueryBuilder();
-        static::filterByForeignClasses($qb, $value);
-
-        return static::existsByQueryBuilder($qb);
-    }
 }
