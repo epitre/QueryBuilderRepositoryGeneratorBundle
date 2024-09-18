@@ -131,7 +131,7 @@ class {{ entityClassname }}Base extends {{ extendClass }}
     public function getDeleteQueryBuilder(): QueryBuilder
     {
         $qb = $this->_em->createQueryBuilder();
-        $qb->delete($this->_entityName, 'accessToken');
+        $qb->delete($this->_entityName, '{{ entityDql }}');
 
         return $qb;
     }
