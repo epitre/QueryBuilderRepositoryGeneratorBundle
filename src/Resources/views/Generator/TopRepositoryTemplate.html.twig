@@ -106,7 +106,7 @@ class {{ entityClassname }}Base extends {{ extendClass }}
         return $total['total'];
     }
 
-    public function exists({{ entityClasspath }} $entity): bool
+    public function exists(\{{ entityClasspath }} $entity): bool
     {
         if (null === $entity) {
             throw new \LogicException('The entity parameter must be provided, it can not be null');
