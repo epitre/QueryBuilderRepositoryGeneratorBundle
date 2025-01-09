@@ -70,19 +70,19 @@ Your repository has now some predefined function like "filterById", "filterInId"
 
 # Create queries
 
- Example:
+Example:
 
-		$qb = $this->createQueryBuilder('document');
+	$qb = $this->createQueryBuilder('document');
 
-		//filter on current user (where XX = YY)
-       DocumentRepository::filterByUser($qb, $user);
-       //filter on the extension list (where xxx IN () )
-       DocumentRepository::filterInExtension($qb, $extensionList);
+	// filter on current user (where XX = YY)
+    DocumentRepository::filterByUser($qb, $user);
+    // filter on the extension list (where xxx IN () )
+    DocumentRepository::filterInExtension($qb, $extensionList);
 
-       //Join the tag entity
-       $qb->join('document.tags', 'tag');
-       //filter on the tag entity
-       TagRepository::filterById($qb, $tagButton);
+    // Join the tag entity
+    $qb->join('document.tags', 'tag');
+    // filter on the tag entity
+    TagRepository::filterById($qb, $tagButton);
 
 # Regenerate files
 
