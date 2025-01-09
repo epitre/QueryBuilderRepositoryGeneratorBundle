@@ -107,6 +107,9 @@
         return $qb;
     }
 
+    /**
+     * @return {{ entityClasspath }}[]
+     */
     public function findBy{{ column }}(mixed $value): array
     {
         $qb = $this->getNewQueryBuilder();
